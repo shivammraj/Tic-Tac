@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary": "#68000c",
+                  "error-container": "#93000a",
+                  "surface-dim": "#131411",
+                  "surface-bright": "#3a3936",
+                  "on-primary-container": "#5c0009",
+                  "surface": "#131411",
+                  "on-primary-fixed-variant": "#900a18",
+                  "surface-container": "#20201d",
+                  "outline-variant": "#59413f",
+                  "on-surface-variant": "#e1bebc",
+                  "tertiary-container": "#c98100",
+                  "on-primary-fixed": "#410004",
+                  "on-surface": "#e5e2dd",
+                  "surface-container-low": "#1c1c19",
+                  "secondary": "#a4c9ff",
+                  "surface-variant": "#353532",
+                  "inverse-on-surface": "#31302d",
+                  "on-tertiary": "#462a00",
+                  "surface-container-high": "#2a2a27",
+                  "secondary-fixed": "#d4e3ff",
+                  "primary": "#ffb3ae",
+                  "background": "#131411",
+                  "on-tertiary-fixed-variant": "#653e00",
+                  "surface-tint": "#ffb3ae",
+                  "surface-container-highest": "#353532",
+                  "tertiary": "#ffb95d",
+                  "on-error": "#690005",
+                  "on-tertiary-fixed": "#2a1700",
+                  "inverse-primary": "#b3282c",
+                  "tertiary-fixed": "#ffddb7",
+                  "on-background": "#e5e2dd",
+                  "inverse-surface": "#e5e2dd",
+                  "on-tertiary-container": "#3d2400",
+                  "on-secondary": "#00315d",
+                  "surface-container-lowest": "#0e0e0c",
+                  "secondary-fixed-dim": "#a4c9ff",
+                  "on-secondary-container": "#a3c8ff",
+                  "on-secondary-fixed": "#001c39",
+                  "outline": "#a98987",
+                  "primary-container": "#f85b58",
+                  "error": "#ffb4ab",
+                  "primary-fixed-dim": "#ffb3ae",
+                  "tertiary-fixed-dim": "#ffb95d",
+                  "secondary-container": "#005398",
+                  "primary-fixed": "#ffdad7",
+                  "on-secondary-fixed-variant": "#004883",
+                  "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "16px",
+                  "xs": "4px",
+                  "grid-gap": "12px",
+                  "unit": "4px",
+                  "sm": "8px",
+                  "lg": "24px",
+                  "xl": "40px",
+                  "container-padding": "24px"
+          },
+          "fontFamily": {
+                  "display-xl": ["Black Han Sans"],
+                  "display-lg": ["Black Han Sans"],
+                  "headline-md": ["Space Mono"],
+                  "label-caps": ["Space Mono"],
+                  "body-lg": ["Space Mono"],
+                  "body-sm": ["Space Mono"]
+          },
+          "fontSize": {
+                  "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                  "display-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                  "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                  "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #0D0D0D;
+      color: #F0EDE8;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-lg overflow-hidden">
+<!-- Top AppBar -->
+<header class="bg-surface text-primary font-headline-md text-headline-md border-b border-surface-variant flex justify-between items-center px-container-padding h-16 w-full max-w-[480px] mx-auto sticky top-0 z-40">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">TICTAC</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center p-container-padding relative max-w-[480px] mx-auto w-full">
+<!-- Turn Indicator (Background state) -->
+<div class="w-full mb-lg flex border border-surface-variant h-12 overflow-hidden opacity-30">
+<div class="flex-1 bg-primary-container flex items-center justify-center font-label-caps text-label-caps text-on-primary-container">
+        PLAYER X
+      </div>
+<div class="flex-1 bg-surface-container flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant">
+        PLAYER O
+      </div>
+</div>
+<!-- Game Board (Background state) -->
+<div class="grid grid-cols-3 grid-rows-3 gap-xs w-full aspect-square mb-xl opacity-20">
+<!-- Row 1 -->
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[64px]" style="font-variation-settings: 'wght' 700;">close</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[64px]" style="font-variation-settings: 'wght' 700;">circle</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[64px]" style="font-variation-settings: 'wght' 700;">close</span>
+</div>
+<!-- Row 2 -->
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#2A2A2A] text-[24px]">add</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[64px]" style="font-variation-settings: 'wght' 700;">close</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[64px]" style="font-variation-settings: 'wght' 700;">circle</span>
+</div>
+<!-- Row 3 -->
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#2A2A2A] text-[24px]">add</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#2A2A2A] text-[24px]">add</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[64px]" style="font-variation-settings: 'wght' 700;">close</span>
+</div>
+</div>
+<!-- Score Info (Background state) -->
+<div class="flex gap-md w-full opacity-30">
+<div class="flex-1 bg-surface-container-high border border-surface-variant p-md flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">WIN RATE</span>
+<span class="font-headline-md text-headline-md text-primary">66%</span>
+</div>
+<div class="flex-1 bg-surface-container-high border border-surface-variant p-md flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">STREAK</span>
+<span class="font-headline-md text-headline-md text-on-surface">3</span>
+</div>
+</div>
+<!-- Win Result Overlay (The Main Focus) -->
+<div class="fixed inset-0 z-50 bg-[#0D0D0D] bg-opacity-90 flex items-center justify-center px-container-padding">
+<div class="bg-[#1A1A1A] border-2 border-[#F0EDE8] w-full max-w-[360px] p-xl flex flex-col items-center text-center">
+<!-- Winner Glyph -->
+<div class="mb-lg">
+<span class="material-symbols-outlined text-primary-container text-[120px] leading-none" style="font-variation-settings: 'wght' 700;">close</span>
+</div>
+<!-- Headline -->
+<h2 class="font-headline-md text-display-lg text-primary-container mb-md">X WINS!</h2>
+<!-- Score Pill -->
+<div class="bg-[#2A2A2A] px-lg py-sm mb-xl inline-flex items-center gap-md">
+<span class="font-headline-md text-headline-md text-primary-container">X: 3</span>
+<div class="w-[1px] h-4 bg-surface-variant"></div>
+<span class="font-headline-md text-headline-md text-secondary">O: 2</span>
+<div class="w-[1px] h-4 bg-surface-variant"></div>
+<span class="font-headline-md text-headline-md text-on-surface-variant">D: 1</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-md w-full">
+<button class="bg-[#F0EDE8] text-[#0D0D0D] font-headline-md py-md px-lg w-full transition-transform active:scale-95">
+            PLAY AGAIN
+          </button>
+<button class="bg-transparent border border-transparent text-[#F0EDE8] font-label-caps py-sm px-lg w-full transition-colors hover:bg-surface-container-high">
+            GO HOME
+          </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (History Active logically for result context) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] flex justify-around items-center h-20 px-lg bg-surface border-t-2 border-on-surface z-40">
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-50 transition-transform duration-100 hover:bg-surface-container-high">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps mt-1">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-50 transition-transform duration-100 hover:bg-surface-container-high">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-label-caps text-label-caps mt-1">PLAY</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary scale-110 transition-transform duration-100">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-caps text-label-caps mt-1">HISTORY</span>
+</div>
+</nav>
+</body></html>

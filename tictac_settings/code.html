@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#68000c",
+                    "error-container": "#93000a",
+                    "surface-dim": "#131411",
+                    "surface-bright": "#3a3936",
+                    "on-primary-container": "#5c0009",
+                    "surface": "#131411",
+                    "on-primary-fixed-variant": "#900a18",
+                    "surface-container": "#20201d",
+                    "outline-variant": "#59413f",
+                    "on-surface-variant": "#e1bebc",
+                    "tertiary-container": "#c98100",
+                    "on-primary-fixed": "#410004",
+                    "on-surface": "#e5e2dd",
+                    "surface-container-low": "#1c1c19",
+                    "secondary": "#a4c9ff",
+                    "surface-variant": "#353532",
+                    "inverse-on-surface": "#31302d",
+                    "on-tertiary": "#462a00",
+                    "surface-container-high": "#2a2a27",
+                    "secondary-fixed": "#d4e3ff",
+                    "primary": "#ffb3ae",
+                    "background": "#131411",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-tint": "#ffb3ae",
+                    "surface-container-highest": "#353532",
+                    "tertiary": "#ffb95d",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#2a1700",
+                    "inverse-primary": "#b3282c",
+                    "tertiary-fixed": "#ffddb7",
+                    "on-background": "#e5e2dd",
+                    "inverse-surface": "#e5e2dd",
+                    "on-tertiary-container": "#3d2400",
+                    "on-secondary": "#00315d",
+                    "surface-container-lowest": "#0e0e0c",
+                    "secondary-fixed-dim": "#a4c9ff",
+                    "on-secondary-container": "#a3c8ff",
+                    "on-secondary-fixed": "#001c39",
+                    "outline": "#a98987",
+                    "primary-container": "#f85b58",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#ffb3ae",
+                    "tertiary-fixed-dim": "#ffb95d",
+                    "secondary-container": "#005398",
+                    "primary-fixed": "#ffdad7",
+                    "on-secondary-fixed-variant": "#004883",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xs": "4px",
+                    "grid-gap": "12px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "xl": "40px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Black Han Sans"],
+                    "display-lg": ["Black Han Sans"],
+                    "headline-md": ["Space Mono"],
+                    "label-caps": ["Space Mono"],
+                    "body-lg": ["Space Mono"],
+                    "body-sm": ["Space Mono"]
+            },
+            "fontSize": {
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0D0D0D; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Toggle Style */
+        .toggle-checkbox:checked { right: 0; border-color: #F0EDE8; background-color: #F0EDE8; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #f85b58; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface font-body-lg">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-surface-variant dark:border-surface-variant flex justify-between items-center px-container-padding h-16 w-full max-w-[480px] mx-auto sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-primary">grid_view</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface dark:text-on-surface tracking-tighter">TICTAC</h1>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-primary">settings</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[480px] mx-auto px-container-padding pt-lg pb-xl">
+<!-- Screen Title -->
+<div class="mb-xl">
+<h2 class="font-display-xl text-display-xl uppercase">Settings</h2>
+<div class="h-1 w-12 bg-primary mt-sm"></div>
+</div>
+<!-- Settings Group -->
+<div class="space-y-unit">
+<!-- SettingsRow: Sound Effects -->
+<div class="flex items-center justify-between p-md bg-[#1A1A1A] border-b border-[#2A2A2A] transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="volume_up">volume_up</span>
+<span class="font-body-lg text-body-lg">Sound Effects</span>
+</div>
+<!-- Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- SettingsRow: Vibration -->
+<div class="flex items-center justify-between p-md bg-[#1A1A1A] border-b border-[#2A2A2A] transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="vibration">vibration</span>
+<span class="font-body-lg text-body-lg">Vibration</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- SettingsRow: AI Difficulty -->
+<div class="flex flex-col gap-sm p-md bg-[#1A1A1A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-md mb-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="psychology">psychology</span>
+<span class="font-body-lg text-body-lg">AI Difficulty</span>
+</div>
+<!-- Segmented Control -->
+<div class="flex w-full bg-surface-container-lowest border border-[#2A2A2A] p-xs">
+<button class="flex-1 py-sm font-label-caps text-label-caps bg-transparent text-on-surface-variant hover:text-on-surface">EASY</button>
+<button class="flex-1 py-sm font-label-caps text-label-caps bg-primary text-on-primary">MEDIUM</button>
+<button class="flex-1 py-sm font-label-caps text-label-caps bg-transparent text-on-surface-variant hover:text-on-surface">HARD</button>
+</div>
+</div>
+<!-- SettingsRow: Theme -->
+<div class="flex items-center justify-between p-md bg-[#1A1A1A] border-b border-[#2A2A2A] transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="dark_mode">dark_mode</span>
+<span class="font-body-lg text-body-lg">Theme</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-caps text-label-caps text-primary">DARK</span>
+<div class="w-[1px] h-4 bg-[#2A2A2A]"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-50">LIGHT</span>
+</div>
+</div>
+</div>
+<!-- System Section -->
+<div class="mt-xl">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-md px-md">SYSTEM</h3>
+<div class="space-y-unit">
+<div class="flex items-center justify-between p-md bg-[#1A1A1A] border-b border-[#2A2A2A] transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="info">info</span>
+<span class="font-body-lg text-body-lg">About TicTac</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md bg-[#1A1A1A] border-b border-[#2A2A2A] transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="history">history</span>
+<span class="font-body-lg text-body-lg">Clear Statistics</span>
+</div>
+<span class="material-symbols-outlined text-error" data-icon="delete">delete</span>
+</div>
+</div>
+</div>
+<!-- Footer Visual -->
+<div class="mt-xl flex flex-col items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 0, 'wght' 100;">grid_3x3</span>
+<p class="font-label-caps text-label-caps mt-sm">VERSION 1.0.4-STABLE</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] flex justify-around items-center h-20 px-lg bg-surface dark:bg-surface border-t-2 border-on-surface dark:border-on-surface z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-50 hover:bg-surface-container dark:hover:bg-surface-container active:scale-95 transition-all duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-50 hover:bg-surface-container dark:hover:bg-surface-container active:scale-95 transition-all duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+</a>
+<!-- Settings page is active, however the JSON mapping for "history" is the closest intent for stats/logs/settings flow if we had to pick. In this design, settings is current context -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary scale-110 active:scale-95 transition-all duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</a>
+</nav>
+<!-- Hidden spacer for fixed nav -->
+<div class="h-20"></div>
+</body></html>
